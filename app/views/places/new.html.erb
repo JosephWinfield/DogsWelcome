@@ -1,0 +1,32 @@
+<div class="form">
+  <h1 class="title">
+    Add A New Dog Friendly Pace!!
+  </h1>
+
+  <%= form_for(@place) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Business Name", class: "input" %>
+    <br>
+    <%= f.label :address %>
+    <%= f.text_field :address, placeholder: "Address", class: "input" %>
+    <br>
+    <%= f.label :address2 %>
+    <%= f.text_field :address2, placeholder: "Address 2", class: "input" %>
+    <br>
+    <%= f.label :city %>
+    <%= f.text_field :city, placeholder: "City", class: "input" %>
+    <br>
+    <%= f.label :state, "State" %>
+    <%= f.text_field :state, placeholder: "State" %>
+    <br>
+    <%= f.label :zip, "Zip Code" %>
+    <%= f.text_field :zip, placeholder: "Zip Code", class: "input" %>
+    <br>
+    <%= f.label :category, "Category" %>
+    <%= f.text_field :category, placeholder: "Category", class: "input" %>
+    <br>
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description, placeholder: "Description", class: "input" %>
+    <%= f.submit "Add Place", class: "submit" %>
+  <% end %>
+</div>
