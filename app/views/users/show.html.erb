@@ -2,6 +2,10 @@
   <%=@user.first_name%> <%=@user.last_name %>
 </h1>
 
+<div style="width: 150px; height: auto">
+  <%= image_tag(@user.avatar, style:"width: 150px; height: auto") %>
+</div>
+
 <ul>
   <li>
     Email: <%= @user.email %>
@@ -10,3 +14,11 @@
     Current Location: <%= @user.city %>, <%= @user.state %>
   </li>
 </ul>
+
+<% if @user == current_user %>
+  <ul>
+    <li>
+      <%=link_to "Edit Profile", edit_user_registration_path%>
+    </li>
+  </ul>
+<% end %>
