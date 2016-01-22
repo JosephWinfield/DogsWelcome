@@ -10,7 +10,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails'
 gem 'devise'
 gem 'carrierwave'
-
+gem 'fog'
 
 
 group :development, :test do
