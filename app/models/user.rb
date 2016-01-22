@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   :trackable,
   :validatable
 
+  mount_uploader :avatar, AvatarUploader
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :address, presence: true

@@ -13,7 +13,18 @@ class ApplicationController < ActionController::Base
       :address2,
       :city,
       :state,
-      :zip
+      :zip,
+      :avatar
+    ]
+    devise_parameter_sanitizer.for(:account_update) << [
+      :first_name,
+      :last_name,
+      :address,
+      :address2,
+      :city,
+      :state,
+      :zip,
+      :avatar
     ]
   end
 
