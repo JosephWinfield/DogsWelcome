@@ -1,4 +1,9 @@
 class PlacesController < ApplicationController
+  before_action :authorize_user, except: [
+    :index,
+    :show
+  ]
+
   def index
     @places = Place.all
   end
@@ -35,5 +40,11 @@ class PlacesController < ApplicationController
       :category,
       :description
     )
+  end
+
+  def authorize_user
+    if !user_signed_in? 
+      redirect_to root_path
+    end
   end
 end
