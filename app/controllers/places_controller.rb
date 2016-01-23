@@ -18,6 +18,8 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.create(place_params)
+    @user = current_user
+    @place.user = @user
     if @place.save
       redirect_to place_path(@place)
       flash[:notice] = "Place added successfully"
@@ -38,12 +40,13 @@ class PlacesController < ApplicationController
       :state,
       :zip,
       :category,
-      :description
+      :description,
+      :user_id
     )
   end
 
   def authorize_user
-    if !user_signed_in? 
+    if !user_signed_in?
       redirect_to root_path
     end
   end
