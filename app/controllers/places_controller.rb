@@ -19,7 +19,7 @@ class PlacesController < ApplicationController
   def create
     @place = Place.create(place_params)
     @user = current_user
-    @place.user = @user 
+    @place.user = @user
     if @place.save
       redirect_to place_path(@place)
       flash[:notice] = "Place added successfully"
@@ -32,7 +32,6 @@ class PlacesController < ApplicationController
   private
 
   def place_params
-    binding.pry
     params.require(:place).permit(
       :name,
       :address,
