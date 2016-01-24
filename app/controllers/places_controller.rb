@@ -5,7 +5,21 @@ class PlacesController < ApplicationController
   ]
 
   def index
-    @places = Place.all
+    if params[:location] == nil || params[:location].empty?
+      flash[:notice] = "Please submit a valid location"
+      redirect_to root_path
+
+    else
+      location = params[:location].downcase.gsub(/\W/, "")
+      coordinates = Geocoder.coordinates(location)
+      if coordinates == nil
+        flash[:notice] = "Please submit a valid location"
+        redirect_to root_path
+      else
+        @coordinates = coordinates
+        @places = Place.all.near(@coordinates, 10)
+      end
+    end
   end
 
   def show
@@ -41,7 +55,9 @@ class PlacesController < ApplicationController
       :zip,
       :category,
       :description,
-      :user_id
+      :user_id,
+      :latitude,
+      :longitude
     )
   end
 

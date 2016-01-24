@@ -1,14 +1,21 @@
 <h1>
   Dog Friendly Places
 </h1>
+
+<%= render "shared/search_bar" %>
+
 <ul>
   <% @places.each do |place| %>
     <li>
       <%= link_to place.name, place_path(place) %>
-      <%= place.address %>
-      <%= place.city %>
-      <%= place.state %>
-      <%= place.zip %>
+      <%= place.full_address %>
     </li>
     <% end %>
 </ul>
+
+<div id="map-canvas"></div>
+
+<script type="text/javascript">
+  var coordinates = <%= @coordinates.to_json.html_safe %>
+  var placeLocation = <%= @places.to_json.html_safe %>
+</script>

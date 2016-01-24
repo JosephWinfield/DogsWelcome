@@ -11,6 +11,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'fog'
+gem 'geocoder'
 
 
 group :development, :test do
