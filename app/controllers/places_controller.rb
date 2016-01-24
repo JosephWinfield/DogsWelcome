@@ -1,7 +1,8 @@
 class PlacesController < ApplicationController
-  before_action :authorize_user, except: [
-    :index,
-    :show
+  before_action :authorize_user, only: [
+    :create,
+    :update,
+    :destroy
   ]
 
   def index
