@@ -17,7 +17,7 @@ $(function() {
     var map = new google.maps.Map(document.getElementById('place-map-canvas'),
         mapOptions);
 
-    new google.maps.Marker({
+    var marker = new google.maps.Marker({
       position: new google.maps.LatLng(
         placeCoordinates[0],
         placeCoordinates[1]

@@ -25,7 +25,7 @@ feature "sign up", %{
     click_button "Sign Up"
 
     expect(page).to have_content("Welcome")
-    expect(page).to have_content("Sign Out")
+    expect(page).to have_content("sign out")
   end
 
   scenario "Required information is not provided" do
