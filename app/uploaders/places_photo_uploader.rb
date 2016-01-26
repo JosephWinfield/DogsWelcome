@@ -1,5 +1,4 @@
 class PlacesPhotoUploader < CarrierWave::Uploader::Base
-
   if Rails.env.test?
     storage :file
   else
@@ -11,6 +10,6 @@ class PlacesPhotoUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-   ActionController::Base.helpers.asset_path("default.jpg")
- end
+    ActionController::Base.helpers.asset_path("default.jpg")
+  end
 end
