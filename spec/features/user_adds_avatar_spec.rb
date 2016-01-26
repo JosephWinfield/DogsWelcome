@@ -3,7 +3,7 @@ require "rails_helper"
 feature "avatar" do
   scenario "user uploads an avatar" do
     visit root_path
-    click_link "Sign Up"
+    click_link "sign up"
 
     fill_in "First Name", with: "Mike"
     fill_in "Last Name", with: "Miller"
