@@ -1,0 +1,54 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  background-image: url("<%= asset_path('bg.png') %>");
+  background-size: 200px 200px;
+  font-family: "adelle-sans";
+  color: #ececec;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  width: 88%;
+  margin: 0 auto;
+}
+
+.root-headline {
+  padding-left: 50px;
+}
+
+.root-headline::before, .headline::before {
+  content: "";
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+}
+
+.root-headline::before {
+  background-image: url("<%= asset_path('dw-mark-light.svg')%>");
+}
+
+.headline::before {
+  background-image: url("<%= asset_path('dw-mark-color.svg')%>");
+}
+
+.headline a, .root-headline a {
+  text-decoration: none;
+  color: #ececec;
+}

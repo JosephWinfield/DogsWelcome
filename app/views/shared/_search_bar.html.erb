@@ -1,5 +1,5 @@
 <%= form_tag places_path, method: :get do %>
   <%= label :location, "Location" %>
   <%= text_field_tag :location, params[:location] %>
-  <%= submit_tag "Search" %>
+  <%= submit_tag '', class: "search-button" %>
 <% end %>

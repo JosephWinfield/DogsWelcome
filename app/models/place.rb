@@ -1,6 +1,8 @@
 class Place < ActiveRecord::Base
   belongs_to :user
 
+  mount_uploader :image, PlacesPhotoUploader
+
   geocoded_by :full_address
   after_validation :geocode
 

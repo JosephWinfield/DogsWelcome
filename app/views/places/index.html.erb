@@ -1,19 +1,30 @@
-<h1>
-  Dog Friendly Places
-</h1>
+<div class="search">
+  <%= render "shared/search_bar" %>
+</div>
 
-<%= render "shared/search_bar" %>
-
-<ul>
+<div id="map-container">
+  <div id="map-canvas"></div>
+</div>
+<ul class="places-list">
   <% @places.each do |place| %>
-    <li>
-      <%= link_to place.name, place_path(place) %>
-      <%= place.full_address %>
+    <li class="place-item">
+      <%= image_tag(place.image, class: "place-image") %>
+      <h2>
+        <%= link_to place.name, place_path(place) %>
+      </h2>
+      <span class="address">
+        <%= place.address %>
+        <%= place.city %>,
+        <%= place.state %>
+        <%= place.zip %>
+      </span>
+      <br>
+      <span class="category">
+        <%= place.category %>
+      </span>
     </li>
-    <% end %>
+  <% end %>
 </ul>
-
-<div id="map-canvas"></div>
 
 <script type="text/javascript">
   var coordinates = <%= @coordinates.to_json.html_safe %>
