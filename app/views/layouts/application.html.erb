@@ -32,20 +32,20 @@
           <ul>
             <% unless user_signed_in? %>
               <li>
-                <%= link_to "log in",  user_session_path %>
-              </li>
-              <li>
                 <%= link_to "sign up", new_user_registration_path %>
               </li>
+              <li>
+                <%= link_to "log in",  user_session_path %>
+              </li>
             <% else %>
-              <li>
-                <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              <li class="new-place">
+                <%= link_to "add a place", new_place_path %>
               </li>
               <li>
-                <%= link_to "Add Dog Friendly Place", new_place_path %>
+                <%= link_to "sign out", destroy_user_session_path, method: :delete %>
               </li>
               <li>
-                <%= link_to "My Profile",  user_path(current_user) %>
+                <%= link_to "profile",  user_path(current_user) %>
               </li>
             <% end %>
           </ul>
