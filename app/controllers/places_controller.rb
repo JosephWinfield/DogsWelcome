@@ -25,6 +25,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @coordinates = [@place.latitude, @place.longitude]
   end
 
   def new
@@ -38,6 +39,29 @@ class PlacesController < ApplicationController
     if @place.save
       redirect_to place_path(@place)
       flash[:notice] = "Place added successfully"
+    else
+      flash[:errors] = @place.errors.full_messages.join(". ")
+      render action: 'new'
+    end
+  end
+
+  def edit
+    @place = Place.find(params[:id])
+  end
+
+  def destroy
+    @place = Place.find(params[:id])
+    @place.destroy
+    redirect_to root_path
+  end
+
+  def update
+    @place = Place.find(params[:id])
+
+    @place.update(place_params)
+
+    if @place.save
+      redirect_to place_path(@place)
     else
       flash[:errors] = @place.errors.full_messages.join(". ")
       render action: 'new'

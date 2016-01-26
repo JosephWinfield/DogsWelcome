@@ -1,3 +1,53 @@
-<%= @place.name %>
+<div class="place-details">
+  <%= image_tag(@place.image, class: "place-image") %>
+  <h1>
+    <%= @place.name %>
+  </h1>
+  <span class="show-address">
+    <%= @place.address %>
+    <%= @place.city %>
+    <%= @place.state %>
+    <%= @place.zip %>
+  </span>
+  <br>
+  <span class="show-category">
+    <%= @place.category %>
+  </span>
 
-<%= image_tag(@place.image) %>
+  <p class="description">
+    <%= @place.description %>
+  </p>
+</div>
+
+<div id="place-map-container">
+  <div id="place-map-canvas"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+  <% if @place.user == current_user %>
+  <%= link_to "edit", edit_place_path(@place) %>
+  <!-- <%= link_to "delete", place_path(@place), method: "delete" %> -->
+  <% end %>
+</div>
+
+
+
+<script type="text/javascript">
+  var placeCoordinates = <%= @coordinates.to_json.html_safe %>
+</script>

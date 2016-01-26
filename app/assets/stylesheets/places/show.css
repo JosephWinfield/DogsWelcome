@@ -1,0 +1,35 @@
+.place-details {
+  width: 50%;
+  float: left;
+}
+
+.place-details h1 {
+  font: italic 700 42.5px "adelle-sans";
+  margin: 0;
+}
+
+.show-address {
+  font: italic 400 19px "adelle-sans";
+}
+
+.show-category {
+  font-family: "adelle-sans";
+  font-size: 16px;
+  color: #5ed7fa;
+}
+
+.description {
+  margin-top: 40px;
+  padding-right: 15px;
+}
+
+#place-map-container {
+  width: 50%;
+  height: 338px;
+  float: right;
+}
+
+#place-map-canvas {
+  width: 100%;
+  height: 100%;
+}

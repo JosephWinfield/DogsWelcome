@@ -4,9 +4,13 @@ var google;
 
 $(function() {
   function initialize() {
+    if (!coordinates) {
+      return;
+    }
     var mapOptions = {
       center: { lat: coordinates[0], lng: coordinates[1]  },
-      zoom: 12
+      zoom: 12,
+      scrollwheel: false
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
