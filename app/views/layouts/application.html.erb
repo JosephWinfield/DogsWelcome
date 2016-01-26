@@ -2,48 +2,63 @@
 <html>
 <head>
   <title>DogsWelcome</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <script src="https://use.typekit.net/hnf8kwg.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 </head>
+<% if current_page?(root_path) %>
+  <body class="root-body">
+<%else%>
   <body>
-    <nav>
-      <ul>
-        <% unless user_signed_in? %>
-        <li>
-          <%= link_to "List of Dog Friendly Places", places_path %>
-        </li>
-        <li>
-          <%= link_to "Sign Up", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "Sign In", user_session_path %>
-        </li>
-        <% else %>
-        <li>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        </li>
-        <li>
-          <%= link_to "Add Dog Friendly Place", new_place_path %>
-        </li>
-        <li>
-          <%= link_to "My Profile", user_path(current_user) %>
-        </li>
-        <li>
-          <%= link_to "List of Dog Friendly Places", places_path %>
-        </li>
+<%end%>
+  <% if current_page?(root_path) %>
+    <div>
+  <%else%>
+    <div class="wrapper">
+  <%end%>
+      <div class="header">
+        <% if current_page?(root_path) %>
+          <h1 class="root-headline">
+            <%= link_to "dogs welcome", root_path %>
+          </h1>
+        <%else%>
+          <h1 class="headline">
+            <%= link_to "dogs welcome", root_path %>
+          </h1>
+        <%end%>
+        <nav class="navigation">
+          <ul>
+            <% unless user_signed_in? %>
+              <li>
+                <%= link_to "log in",  user_session_path %>
+              </li>
+              <li>
+                <%= link_to "sign up", new_user_registration_path %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              </li>
+              <li>
+                <%= link_to "Add Dog Friendly Place", new_place_path %>
+              </li>
+              <li>
+                <%= link_to "My Profile",  user_path(current_user) %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
 
-        <% end %>
-      </ul>
-    </nav>
+      <% flash.each do |key, value| %>
+        <%= value %>
+      <% end %>
 
-    <% flash.each do |key, value| %>
-      <%= value %>
-    <% end %>
+      <%= yield %>
 
-    <%= yield %>
-
-
-    <%= javascript_include_tag 'application' %>
+      <%= javascript_include_tag 'application' %>
+    </div>
   </body>
 </html>

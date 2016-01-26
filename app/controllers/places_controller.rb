@@ -58,7 +58,8 @@ class PlacesController < ApplicationController
       :description,
       :user_id,
       :latitude,
-      :longitude
+      :longitude,
+      :image
     )
   end
 
