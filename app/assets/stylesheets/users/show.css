@@ -1,0 +1,33 @@
+.user-details {
+  width: 50%;
+}
+.user-image {
+  border-radius: 50%;
+  width: 137px;
+  height: 137px;
+  float: left;
+  padding-right: 20px;
+}
+
+.user-headline {
+  font-family: "adelle-sans";
+  font-weight: 700;
+  font-style: italic;
+  font-size: 32.5px;
+  -webkit-font-smoothing: antialiased;
+  margin: 18px 0 0;
+}
+
+.user-location {
+  color: #5ed7fa;
+}
+
+.user-places {
+  width: 100%;
+  margin: 100px auto 0;
+  border-top: 1px solid #ececec;
+}
+
+.places-headline {
+  text-align: center;
+}

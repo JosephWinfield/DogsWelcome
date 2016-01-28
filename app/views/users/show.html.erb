@@ -1,28 +1,41 @@
-<% if @user == current_user %>
-<ul>
-  <li>
-    <%=link_to "Edit Profile", edit_user_registration_path%>
-  </li>
-</ul>
-<% end %>
-<h1>
-  <%=@user.first_name%> <%=@user.last_name %>
-</h1>
-
-<div style="width: 150px; height: auto">
-  <%= image_tag(@user.avatar, style:"width: 150px; height: auto") %>
+<div class="user-details">
+  <%= image_tag(@user.avatar, class: "user-image") %>
+  <h1 class="user-headline">
+    <%=@user.first_name%> <%=@user.last_name %>
+  </h1>
+  <span class="user-location">
+    <%= @user.city %>, <%= @user.state %>
+  </span>
 </div>
-<span>
-  <%= @user.city %>, <%= @user.state %>
-</span>
 
-<h1>
-  My Places
-</h1>
-<ul>
-  <% @places.each do |place| %>
-    <li>
-      <%=link_to place.name, place_path(place) %>
+<div class="user-places">
+  <h1 class="places-headline">
+    My Places
+  </h1>
+  <ul class="places-list">
+    <% @places.each do |place| %>
+    <li class="place-item">
+      <%= image_tag(place.image, class: "place-image") %>
+      <h2>
+        <%= link_to place.name, place_path(place) %>
+      </h2>
+      <span class="address">
+        <%= place.address %>
+        <%= place.city %>,
+        <%= place.state %>
+        <%= place.zip %>
+      </span>
+      <br>
+      <span class="category">
+        <%= place.category %>
+      </span>
     </li>
-  <%end%>
-</ul>
+    <% end %>
+  </ul>
+</div>
+
+<% if @user == current_user %>
+  <span>
+    <%=link_to "Edit Profile", edit_user_registration_path%>
+  </span>
+<% end %>
