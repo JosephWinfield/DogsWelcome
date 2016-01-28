@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Place do
   it "should have a name attribute" do
-    should have_valid(:name).when('Foo')
+    should have_valid(:name).when('Allston Park')
   end
   it "should not have a blank name attribute" do
     should_not have_valid(:name).when(nil, '')
