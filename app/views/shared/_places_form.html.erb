@@ -1,6 +1,6 @@
 <%= form_for(@place) do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "Business Name", class: "input" %>
+  <%= f.text_field :name, placeholder: "Name", class: "input" %>
   <br>
   <%= f.label :image %>
   <%= f.file_field :image, placeholder: "Business Image", class: "input" %>
@@ -15,7 +15,7 @@
   <%= f.text_field :city, placeholder: "City", class: "input" %>
   <br>
   <%= f.label :state, "State" %>
-  <%= f.text_field :state, placeholder: "State" %>
+  <%= f.text_field :state, placeholder: "State", class: "input" %>
   <br>
   <%= f.label :zip, "Zip Code" %>
   <%= f.text_field :zip, placeholder: "Zip Code", class: "input" %>

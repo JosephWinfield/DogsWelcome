@@ -22,22 +22,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.wrapper {
+.root-wrapper {
   width: 88%;
   margin: 0 auto;
 }
 
-.root-headline {
-  padding-left: 50px;
-}
-
 .root-headline::before, .headline::before {
   content: "";
-  height: 70px;
-  width: 70px;
+  height: 45px;
+  width: 45px;
   display: inline-block;
   vertical-align: middle;
   background-repeat: no-repeat;
+  margin-right: -15px;
+  margin-bottom: 5px;
 }
 
 .root-headline::before {
@@ -56,4 +54,25 @@ body {
 .new-place a::after {
   content: "+";
   padding-left: 5px;
+}
+
+.navigation ul {
+  padding: 0;
+  text-align: center;
+}
+
+@media(min-width: 800px) {
+  .root-wrapper, .wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .root-headline a, .headline a {
+    margin-left: -7px;
+  }
+
+  .root-headline::before, .headline::before {
+    height: 70px;
+    width: 70px;
+  }
 }

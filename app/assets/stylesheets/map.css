@@ -1,10 +1,23 @@
 #map-container {
-   height: 450px;
+   height: 220px;
    border-radius: 16px 16px;
    width: 100%;
    margin: 65px auto 0;
  }
+
  #map-canvas {
-   height: 384px;
+   height: 220px;
    width: 100%;
  }
+
+@media(min-width: 900px) {
+  #map-container {
+    height: 450px;
+  }
+
+  #map-canvas {
+    height: 384px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
