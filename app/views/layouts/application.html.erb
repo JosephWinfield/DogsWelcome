@@ -7,6 +7,7 @@
   <script src="https://use.typekit.net/hnf8kwg.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <% if current_page?(root_path) %>
   <body class="root-body">
@@ -14,11 +15,11 @@
   <body>
 <%end%>
   <% if current_page?(root_path) %>
-    <div>
+    <div class="root-wrapper">
   <%else%>
     <div class="wrapper">
   <%end%>
-      <div class="header">
+      <header class="header">
         <% if current_page?(root_path) %>
           <h1 class="root-headline">
             <%= link_to "dogs welcome", root_path %>
@@ -31,26 +32,26 @@
         <nav class="navigation">
           <ul>
             <% unless user_signed_in? %>
+            <li>
+              <%= link_to "log in",  user_session_path %>
+            </li>
               <li>
                 <%= link_to "sign up", new_user_registration_path %>
-              </li>
-              <li>
-                <%= link_to "log in",  user_session_path %>
               </li>
             <% else %>
               <li class="new-place">
                 <%= link_to "add a place", new_place_path %>
               </li>
               <li>
-                <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+                <%= link_to "profile",  user_path(current_user) %>
               </li>
               <li>
-                <%= link_to "profile",  user_path(current_user) %>
+                <%= link_to "sign out", destroy_user_session_path, method: :delete %>
               </li>
             <% end %>
           </ul>
         </nav>
-      </div>
+      </header>
 
       <% flash.each do |key, value| %>
         <%= value %>

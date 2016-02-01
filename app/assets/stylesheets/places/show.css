@@ -1,35 +1,85 @@
 .place-details {
-  width: 50%;
-  float: left;
+  width: 90%;
+  margin: 42px auto 0;
 }
 
 .place-details h1 {
-  font: italic 700 42.5px "adelle-sans";
+  font: italic 700 18px "adelle-sans";
   margin: 0;
 }
 
 .show-address {
-  font: italic 400 19px "adelle-sans";
+  font: italic 400 12px "adelle-sans";
 }
 
 .show-category {
   font-family: "adelle-sans";
-  font-size: 16px;
+  font-size: 11px;
   color: #5ed7fa;
 }
 
 .description {
-  margin-top: 40px;
-  padding-right: 15px;
+  font-size: 14px;
+  margin: 25px 0;
 }
 
 #place-map-container {
-  width: 50%;
-  height: 338px;
-  float: right;
+  width: 100%;
+  height: 200px;
+
 }
 
 #place-map-canvas {
   width: 100%;
   height: 100%;
+}
+
+@media(min-width: 700px) {
+  .place-details {
+    width: 50%;
+    float: left;
+    margin-top: 80px;
+  }
+
+  .description {
+    padding-right: 15px;
+  }
+
+  #place-map-container {
+    width: 50%;
+    margin-top: 80px;
+    height: 300px;
+    float: right;
+  }
+}
+
+@media(min-width: 900px) {
+  .place-details {
+    float: left;
+  }
+
+  .place-details h1 {
+    font-size: 42.5px;
+    font-style: italic;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .show-address {
+    font-weight: 400;
+    font-size: 19px;
+  }
+
+  .show-category {
+    font-size: 16px;
+  }
+
+  .description {
+    margin-top: 40px;
+  }
+
+  #place-map-container {
+    height: 338px;
+    float: right;
+  }
 }

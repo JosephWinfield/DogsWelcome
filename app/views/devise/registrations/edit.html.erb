@@ -1,11 +1,9 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: "input" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -14,12 +12,12 @@
 
   <div class="field">
     <%= f.label :first_name, "First Name" %><br />
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "input" %>
   </div>
 
   <div class="field">
     <%= f.label :last_name, "Last Name" %><br />
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: "input" %>
   </div>
 
   <div class="field">
@@ -29,7 +27,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: "input" %>
   </div>
 
   <div>
@@ -49,7 +47,7 @@
 
   <div>
     <%= f.label :state %>
-    <%= f.text_field :state, placeholder: "State" %>
+    <%= f.text_field :state, placeholder: "State", class: "input" %>
   </div>
 
   <div>
@@ -57,18 +55,16 @@
     <%= f.text_field :zip, placeholder: "Zip Code", class: "input" %>
   </div>
 
-  <div class="field">
+  <div class="password_field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.password_field :current_password, autocomplete: "off", class: "input" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: "submit" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<!-- <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "submit" %></p>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back %> -->

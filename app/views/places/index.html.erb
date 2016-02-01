@@ -1,30 +1,37 @@
-<div class="search">
-  <%= render "shared/search_bar" %>
-</div>
+<article>
+  <section class="search">
+    <%= render "shared/search_bar" %>
+  </section>
 
-<div id="map-container">
-  <div id="map-canvas"></div>
-</div>
-<ul class="places-list">
-  <% @places.each do |place| %>
-    <li class="place-item">
-      <%= image_tag(place.image, class: "place-image") %>
-      <h2>
-        <%= link_to place.name, place_path(place) %>
-      </h2>
-      <span class="address">
-        <%= place.address %>
-        <%= place.city %>,
-        <%= place.state %>
-        <%= place.zip %>
-      </span>
-      <br>
-      <span class="category">
-        <%= place.category %>
-      </span>
-    </li>
-  <% end %>
-</ul>
+  <section class="map">
+    <div id="map-container">
+      <div id="map-canvas"></div>
+    </div>
+  </section>
+
+  <section class="places">
+    <ul class="places-list">
+      <% @places.each do |place| %>
+      <li class="place-item">
+        <%= image_tag(place.image, class: "place-image") %>
+        <h2>
+          <%= link_to place.name, place_path(place) %>
+        </h2>
+        <span class="address">
+          <%= place.address %>
+          <%= place.city %>,
+          <%= place.state %>
+          <%= place.zip %>
+        </span>
+        <br>
+        <span class="category">
+          <%= place.category %>
+        </span>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+</article>
 
 <script type="text/javascript">
   var coordinates = <%= @coordinates.to_json.html_safe %>

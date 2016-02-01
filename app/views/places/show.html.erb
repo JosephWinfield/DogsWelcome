@@ -1,23 +1,25 @@
-<div class="place-details">
-  <%= image_tag(@place.image, class: "place-image") %>
-  <h1>
-    <%= @place.name %>
-  </h1>
-  <span class="show-address">
-    <%= @place.address %>
-    <%= @place.city %>
-    <%= @place.state %>
-    <%= @place.zip %>
-  </span>
-  <br>
-  <span class="show-category">
-    <%= @place.category %>
-  </span>
+<article class="place-details">
+  <div class="place-info">
+    <%= image_tag(@place.image, class: "place-image") %>
+    <h1>
+      <%= @place.name %>
+    </h1>
+    <span class="show-address">
+      <%= @place.address %>
+      <%= @place.city %>
+      <%= @place.state %>
+      <%= @place.zip %>
+    </span>
+    <br>
+    <span class="show-category">
+      <%= @place.category %>
+    </span>
+  </div>
 
   <p class="description">
     <%= @place.description %>
   </p>
-</div>
+</article>
 
 <div id="place-map-container">
   <div id="place-map-canvas"></div>

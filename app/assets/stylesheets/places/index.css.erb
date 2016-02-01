@@ -1,15 +1,18 @@
-.headline {
-  font-family: 'IntroScriptB-H1Base';
-  font-size: 67.5px;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  float: left;
-  margin-bottom: 60px;
+.search {
+  width: 45%;
+  margin: 0 auto;
 }
 
-.search {
-  width: 42.3%;
-  margin: 0 auto;
+.search #location {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ececec;
+  font-size: 22px;
+  text-align: left;
+  width: 75%;
+  color: #ececec;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .search input {
@@ -20,49 +23,27 @@
   display: none;
 }
 
-.search #location {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #ececec;
-  font-size: 42.5px;
-  text-align: left;
-  width: 80%;
-  color: #ececec;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.search .search-button {
-  background: transparent;
-  border: none;
-  background-image: url("<%=asset_path('search-icon-colo.svg')%>");
-  width: 35px;
-  height: 35px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding: 0;
-}
-
 .places-list {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  margin: 0 20px;
+  padding: 0;
 }
 
 .place-item {
   list-style: none;
   margin: 0;
-  flex: 1 0 50%;
-  padding-bottom: 60px;
+  flex: 1 0 100%;
+  padding-top: 30px;
 }
 
-.place-item h2 {
-  font-family: "adelle-sans";
-  font-weight: 700;
-  font-style: italic;
-  font-size: 32.5px;
-  -webkit-font-smoothing: antialiased;
-  margin: 18px 0 0;
+.place-image {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 10px;
 }
 
 .place-item a {
@@ -70,20 +51,78 @@
   color: #ececec;
 }
 
-.place-image {
-  border-radius: 50%;
-  width: 137px;
-  height: 137px;
-  float: left;
-  margin-right: 22px;
+.place-item h2 {
+  font-family: "adelle-sans";
+  font-weight: 700;
+  font-style: italic;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 
 .address {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   font-style: italic;
 }
 
 .category {
   color: #5ed7fa;
+  font-size: 11px;
+}
+
+@media(min-width: 500px) {
+  .search {
+    margin-top: 50px;
+    width: 50%;
+  }
+  .search .search-button {
+    float: none;
+  }
+}
+
+@media(min-width: 600px) {
+  .search #location {
+    width: 60%;
+    float: none;
+  }
+
+  .search .search-button {
+    float: none;
+  }
+
+  .place-item {
+    list-style: none;
+    margin: 0;
+    flex: 1 0 50%;
+    padding-bottom: 60px;
+  }
+}
+
+@media(min-width: 800px){
+  .header {
+    margin-left: 20px;
+  }
+}
+
+@media(min-width: 900px) {
+
+  .place-item h2 {
+    font-size: 32.5px;
+    margin: 18px 0 0;
+  }
+
+  .place-image {
+    border-radius: 50%;
+    width: 137px;
+    height: 137px;
+    float: left;
+    margin-right: 22px;
+  }
+
+  .address {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+  }
 }
