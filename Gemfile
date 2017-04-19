@@ -12,6 +12,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog'
 gem 'geocoder'
+gem 'active_model_serializers'
 
 
 group :development, :test do

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << [
+    devise_parameter_sanitizer.permit(:sign_up, keys: [
       :first_name,
       :last_name,
       :address,
@@ -18,9 +18,9 @@ class ApplicationController < ActionController::Base
       :state,
       :zip,
       :avatar
-    ]
+    ])
 
-    devise_parameter_sanitizer.for(:account_update) << [
+    devise_parameter_sanitizer.permit(:account_update, keys: [
       :first_name,
       :last_name,
       :address,
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
       :state,
       :zip,
       :avatar
-    ]
+    ])
   end
 
 end

@@ -75,6 +75,6 @@ class Place < ActiveRecord::Base
   validates :category, presence: true
 
   def full_address
-    [ address, address2, city, state, zip ].compact.join(", ")
+    [ address, city, state, zip ].compact.join(", ")
   end
 end

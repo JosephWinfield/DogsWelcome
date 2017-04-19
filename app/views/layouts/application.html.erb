@@ -23,7 +23,7 @@
       <header class="header">
         <% if current_page?(root_path) %>
           <h1 class="root-headline">
-            <%= link_to "dogs welcome", root_path %>
+            <%= link_to "dogs welcome", root_path %>  <?-- <a href=""  -->
           </h1>
         <%else%>
           <h1 class="headline">
@@ -61,6 +61,7 @@
       <%= yield %>
 
       <%= javascript_include_tag 'application' %>
+      <!-- <script src="bundle.js"></script> -->
     </div>
   </body>
 </html>
