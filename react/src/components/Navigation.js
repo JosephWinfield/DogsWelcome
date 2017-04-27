@@ -23,7 +23,7 @@ export default class Navigation extends React.Component {
 		}
 		return (
 			<header>
-				<h1 className='root-headline'><a href='/'> Dogs Welcome</a></h1>
+				<h1 className='root-headline'><a href='/'>dogs welcome</a></h1>
 				<nav className='navigation'>
 					<ul>
 						{navList}

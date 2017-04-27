@@ -2,6 +2,11 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import LandingPage from './components/LandingPage';
-import Navigation from './components/Navigation';
+import {Router, Route} from 'react-router';
 
-ReactDOM.render(<LandingPage/>, document.querySelector('.app'))
+ReactDOM.render(
+	<Router>
+		<Route path='/' component={LandingPage}/>
+	</Router>,
+	document.querySelector('.app')
+)

@@ -23,9 +23,10 @@ export default class Search extends React.Component {
 			<form onSubmit={this.handleSubmit}>
 				<label htmlFor='location'>
 					Location
-				<input type='text' value={this.state.value} onChange={this.handleChange} />
 				</label>
-				<input type='submit' value='Submit' />
+				<input type='text' id='location'
+				placeholder='city' value={this.state.value} onChange={this.handleChange} />
+				<input type='submit' className='search-button' value=''/>
 			</form>
 		);
 	}
