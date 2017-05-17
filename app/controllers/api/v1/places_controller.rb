@@ -1,6 +1,6 @@
 class Api::V1::PlacesController < ApplicationController
 	def index
-		# binding.pry
+		# 	binding.pry
 		render json: Place.all
 	end
 

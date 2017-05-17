@@ -27,6 +27,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'dotenv-rails'
   gem 'quiet_assets'
+  gem 'rb-readline'
 end
 
 group :test do

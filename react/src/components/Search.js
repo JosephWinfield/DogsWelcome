@@ -1,6 +1,8 @@
 import React from 'react'
+import {Route, Redirect, Link} from 'react-router-dom'
 
 export default class Search extends React.Component {
+
 	constructor(props) {
 		super(props);
 		this.state = {value: ''};
@@ -14,8 +16,8 @@ export default class Search extends React.Component {
 	}
 
 	handleSubmit(event) {
-		alert(`You searched for ${this.state.value}`);
 		event.preventDefault();
+		this.props.history.push('/places');
 	}
 
 	render() {
