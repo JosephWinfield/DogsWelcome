@@ -12,6 +12,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog'
 gem 'geocoder'
+gem 'active_model_serializers'
 
 
 group :development, :test do
@@ -26,6 +27,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'dotenv-rails'
   gem 'quiet_assets'
+  gem 'rb-readline'
 end
 
 group :test do

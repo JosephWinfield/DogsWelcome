@@ -4,6 +4,7 @@
   -moz-background-size: 2px 328.5px, cover;
   -o-background-size: 2px 328.5px, cover;
   background-size: 2px 328.5px, cover;
+  /*overflow:hidden;*/
 }
 
 .root-headline, .headline {
@@ -28,20 +29,21 @@
 
 .root-search {
   width: 80%;
-  margin: 10px auto 0;
+  margin: 0 auto;
   text-align: center;
 }
 
-.root-search h1 {
+.root-search h2 {
   font-family: 'IntroRustH2-Base';
   font-weight: normal;
   font-size: 32.5px;
+  color:#ececec;
   -webkit-font-smoothing: antialiased;
 }
 
 .root-search form {
   width: 70%;
-  margin: 10px auto 0;
+  margin: 0 auto ;
 }
 
 .root-search label {
@@ -73,7 +75,7 @@
   height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-top: 3px;
+  /*margin-top: 3px;*/
   padding: 0;
   text-align: center;
   float: right;
@@ -95,7 +97,7 @@
 
 @media(min-width: 480px) {
 
-  .root-search h1 {
+  .root-search h2 {
     font-size: 29px;
   }
 
@@ -109,7 +111,7 @@
   }
 
   .root-search .search-button, .search .search-button  {
-    margin-top: 4px;
+    /*margin-top: 4px;*/
   }
 }
 
@@ -134,7 +136,7 @@
 
   .navigation {
     margin-left: auto;
-    margin-top: 22px;
+    /*margin-top: 22px;*/
   }
 
   .navigation li {
@@ -150,6 +152,7 @@
 
 @media(min-width: 800px) {
   .header {
+    height: 100%;
     width: 100%;
     display: inline-block;
   }
@@ -161,6 +164,7 @@
     float: left;
     margin-bottom: 0;
     -webkit-font-smoothing: antialiased;
+    /*padding: 20px 0 0 30px;*/
   }
 
   .navigation li {
@@ -177,10 +181,10 @@
 
   .root-search {
     width: 80%;
-    margin: 115px auto 0;
+    margin: 0 auto;
   }
 
-  .root-search h1 {
+  .root-search h2 {
     font-family: 'IntroRustH2-Base';
     font-weight: normal;
     font-size: 55px;
