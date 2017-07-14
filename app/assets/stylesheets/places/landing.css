@@ -1,10 +1,10 @@
 .root-body {
-  background: url("<%= asset_path('bg-fade.png')%>") repeat-x top left fixed, url("<%= asset_path('index-bg.jpeg') %>") no-repeat center center fixed;
+  background: url('/assets/bg-fade.png') repeat-x top left fixed, url('/assets/index-bg.jpeg') no-repeat center center fixed;
   -webkit-background-size: 2px 328.5px, cover;
   -moz-background-size: 2px 328.5px, cover;
   -o-background-size: 2px 328.5px, cover;
   background-size: 2px 328.5px, cover;
-  /*overflow:hidden;*/
+  color: #ececec;
 }
 
 .root-headline, .headline {
@@ -29,7 +29,7 @@
 
 .root-search {
   width: 80%;
-  margin: 0 auto;
+  margin: 10px auto 0;
   text-align: center;
 }
 
@@ -37,13 +37,12 @@
   font-family: 'IntroRustH2-Base';
   font-weight: normal;
   font-size: 32.5px;
-  color:#ececec;
   -webkit-font-smoothing: antialiased;
 }
 
 .root-search form {
   width: 70%;
-  margin: 0 auto ;
+  margin: 10px auto 0;
 }
 
 .root-search label {
@@ -75,18 +74,17 @@
   height: 30px;
   background-size: contain;
   background-repeat: no-repeat;
-  /*margin-top: 3px;*/
+  margin-top: 3px;
   padding: 0;
   text-align: center;
-  float: right;
 }
 
 .root-search .search-button {
-  background-image: url("<%=asset_path('search-icon-light.svg')%>");
+  background-image: url('/assets/search-icon-light.svg');
 }
 
 .search .search-button {
-  background-image: url("<%=asset_path('search-icon-colo.svg')%>");
+  background-image: url('/assets/search-icon-colo.svg');
 }
 
 @media(max-width: 799px) {
@@ -111,7 +109,7 @@
   }
 
   .root-search .search-button, .search .search-button  {
-    /*margin-top: 4px;*/
+    margin-top: 4px;
   }
 }
 
@@ -136,7 +134,7 @@
 
   .navigation {
     margin-left: auto;
-    /*margin-top: 22px;*/
+    margin-top: 22px;
   }
 
   .navigation li {
@@ -152,7 +150,6 @@
 
 @media(min-width: 800px) {
   .header {
-    height: 100%;
     width: 100%;
     display: inline-block;
   }
@@ -164,7 +161,6 @@
     float: left;
     margin-bottom: 0;
     -webkit-font-smoothing: antialiased;
-    /*padding: 20px 0 0 30px;*/
   }
 
   .navigation li {
@@ -181,7 +177,7 @@
 
   .root-search {
     width: 80%;
-    margin: 0 auto;
+    margin: 115px auto 0;
   }
 
   .root-search h2 {
@@ -203,6 +199,10 @@
   .root-search input {
     outline: none;
     border: none;
+  }
+
+  .root-search .search-button {
+    margin-left: 10px;
   }
 
   .root-search #location {

@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 export default class Navigation extends React.Component {
 	render() {
 		let navList
 		 if (this.props.isSignedIn){
 			navList = [<li className="new-place">
-				<a href='#'>add a place</a>
+				<Link to='/places/new'>add a place</Link>
 			</li>,
 			<li>
 			<a href='#'>profile</a>
@@ -22,8 +23,8 @@ export default class Navigation extends React.Component {
 			</li>]
 		}
 		return (
-			<header>
-				<h1 className='root-headline'><a href='/'>dogs welcome</a></h1>
+			<header className='header'>
+				<h1 className={this.props.klass}><Link to='/'>dogs welcome</Link></h1>
 				<nav className='navigation'>
 					<ul>
 						{navList}

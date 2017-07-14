@@ -8,7 +8,7 @@ export default class LandingPage extends React.Component {
 		return (
 			<div className='root-body'>
 				<div className='root-wrapper'>
-					<Navigation isSignedIn={true}/>
+					<Navigation isSignedIn={true} klass={'root-headline'}/>
 					<div className='root-search'>
 						<h2>
 							Where are you headed?

@@ -13,6 +13,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'geocoder'
 gem 'active_model_serializers'
+gem 'carrierwave-base64'
 
 
 group :development, :test do
