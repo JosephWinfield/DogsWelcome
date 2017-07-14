@@ -24,7 +24,7 @@ export default class PlacesIndex extends React.Component {
 		return (
 			<div className='body'>
 				<div className='wrapper'>
-					<Navigation isSignedIn={true}/>
+					<Navigation isSignedIn={true} klass={'headline'}/>
 					<section className='search'>
 						<Search history={this.props.history}/>
 					</section>

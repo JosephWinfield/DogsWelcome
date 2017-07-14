@@ -17,21 +17,27 @@
 ul {
   margin: 0;
 }
-html, body, .app, .root-body, .root-wrapper, .wrapper {
+html, body, .app, .root-body {
   height: 100%;
 }
 
+
 .body {
-  background-image: url("<%= asset_path('bg.png') %>");
+  background-image: url('/assets/bg.png');
   background-size: 200px 200px;
   font-family: "adelle-sans";
   color: #ececec;
+  min-height: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
 .root-wrapper {
   width: 88%;
   margin: 0 auto;
+}
+
+.wrapper {
+  min-height: 100%;
 }
 
 .root-headline::before, .headline::before {
@@ -41,16 +47,16 @@ html, body, .app, .root-body, .root-wrapper, .wrapper {
   display: inline-block;
   vertical-align: middle;
   background-repeat: no-repeat;
-  margin-right: -15px;
+  margin-right: -7px;
   margin-bottom: 5px;
 }
 
 .root-headline::before {
-  background-image: url("<%= asset_path('dw-mark-light.svg')%>");
+  background-image: url('/assets/dw-mark-light.svg');
 }
 
 .headline::before {
-  background-image: url("<%= asset_path('dw-mark-color.svg')%>");
+  background-image: url('/assets/dw-mark-color.svg');
 }
 
 .headline a, .root-headline a {

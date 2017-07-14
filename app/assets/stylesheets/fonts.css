@@ -1,0 +1,19 @@
+@import url("//hello.myfonts.net/count/30349b");
+
+@font-face {
+  font-family: 'IntroRustH2-Base';
+  src: url('/assets/30349B_0_0.eot');
+  src: url('/assets/30349B_0_0.eot?#iefix') format('embedded-opentype'),
+  url('/assets/30349B_0_0.woff2') format('woff2'),
+  url('/assets/30349B_0_0.woff') format('woff'),
+  url('/assets/30349B_0_0.ttf") %>') format('truetype');
+}
+
+@font-face {
+  font-family: 'IntroScriptB-H1Base';
+  src: url('/assets/30349B_1_0.eot');
+  src: url('/assets/30349B_1_0.eot?#iefix') format('embedded-opentype'),
+  url('/assets/30349B_1_0.woff2') format('woff2'),
+  url('/assets/30349B_1_0.woff') format('woff'),
+  url('/assets/30349B_1_0.ttf') format('truetype');
+}

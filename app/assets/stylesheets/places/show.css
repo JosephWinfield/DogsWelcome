@@ -3,7 +3,7 @@
   margin: 42px auto 0;
 }
 
-.place-details h1 {
+.place-details h2 {
   font: italic 700 18px "adelle-sans";
   margin: 0;
 }
@@ -58,7 +58,7 @@
     float: left;
   }
 
-  .place-details h1 {
+  .place-details h2 {
     font-size: 42.5px;
     font-style: italic;
     font-weight: 700;

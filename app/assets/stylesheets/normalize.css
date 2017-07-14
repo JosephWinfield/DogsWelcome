@@ -266,6 +266,10 @@ button {
   overflow: visible;
 }
 
+form{
+  margin: 0;
+}
+
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
  * All other form control elements do not inherit `text-transform` values.

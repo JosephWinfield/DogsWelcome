@@ -1,17 +1,20 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 export default ({place}) => {
 	return(
 		<li className='place-item'>
-			<img className='place-image' src={place.image.url} alt='place image '/>
-			<h2>{place.name}</h2>
-			<span className='address'>
-				{place.full_address}
-			</span>
-			<br/>
-			<span className='category'>
-				{place.category}
-			</span>
+			<Link to={`/places/${place.id}`}>
+				<img className='place-image' src={place.image.url} alt='place image '/>
+				<h2>{place.name}</h2>
+				<span className='address'>
+					{place.full_address}
+				</span>
+				<br/>
+				<span className='category'>
+					{place.category}
+				</span>
+			</Link>
 		</li>
 	)
 }
